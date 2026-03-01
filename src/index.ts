@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use("/api/users", userRoutes);
 app.use("/", (req, res) => {
-  res.send("Server Is Ready 🚀🚀🚀🚀");
+  res.send("Server Is Ready ✨✨✨");
 });
 mongoose.connect(process.env.MONGO_URI as string)
   .then(() => {
