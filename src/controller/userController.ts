@@ -4,19 +4,19 @@ import User from "../model/user";
 // Create
 export const createUser = async (req: Request, res: Response) => {
   const user = await User.create(req.body);
-  res.status(201).json(user);
+  res.status(201).json({ message: "User created", user });
 };
 
 // Get All
 export const getUsers = async (_req: Request, res: Response) => {
   const users = await User.find();
-  res.json(users);
+  res.json({ message: "Users fetched", users });
 };
 
 // Update
 export const updateUser = async (req: Request, res: Response) => {
   const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
-  res.json(user);
+  res.json({ message: "User updated", user });
 };
 
 // Delete
